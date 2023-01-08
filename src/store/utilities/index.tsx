@@ -4,6 +4,10 @@ export const clearBoard = (context: CanvasRenderingContext2D | null) => {
     }
 };
 
+function randomNumber() {
+
+}
+
 export interface IObjectBody {
     x: number;
     y: number;
