@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {useSelector} from "react-redux";
 import {IGlobalState} from "../store/reducers";
-import {drawObject, IObjectBody} from "../store/utilities";
+import {drawObject, generateRandomPosition, IObjectBody} from "../store/utilities";
 
 export interface ICanvasBoard {
     height: number
@@ -13,7 +13,7 @@ const CanvasBoard = ({height, width}: ICanvasBoard) => {
 
     const [context, setContext] = useState<CanvasRenderingContext2D | null>(null);
     const snake1 = useSelector((state: IGlobalState) => state.snake);
-    const [pos, setPos] = useState<IObjectBody>()
+    const [pos, setPos] = useState<IObjectBody>(generateRandomPosition(width - 20, height - 20));
 
     useEffect(() => {
         setContext(canvasRef.current && canvasRef.current.getContext('2d'));
