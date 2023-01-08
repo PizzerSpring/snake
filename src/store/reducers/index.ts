@@ -1,4 +1,3 @@
-import {isNumber} from "util";
 
 interface ISnakeCoord {
     x: number
@@ -24,12 +23,22 @@ const globalState: IGlobalState = {
 export const gameReducer = (state = globalState, action: any) => {
     switch (action.type) {
         case "MOVE_RIGHT":
-            /**
-             * Perform a certain set of operations
-             */
+
             return {
                 ...state, data: action.payload
             };
+        case 'DOWN': {
+            let newSnake = [...state.snake];
+            newSnake = [{
+                x: state.snake[0].x + action.payload[0],
+                y: state.snake[1].y + action.payload[1]
+            }, ...newSnake]
+            newSnake.pop();
+            return {
+                ...state,
+                snake: newSnake
+            }
+        }
 
         default:
             return state;
