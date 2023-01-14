@@ -4,13 +4,14 @@ import {
 } from "redux";
 import createSagaMiddleware from "redux-saga";
 import {gameReducer} from "./reducers";
-import {watcherSaga} from "./sagas";
+import watcherSagas from "./sagas";
+
 
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(gameReducer, applyMiddleware(sagaMiddleware));
 
-sagaMiddleware.run(watcherSaga);
+sagaMiddleware.run(watcherSagas);
 
 export default store;
