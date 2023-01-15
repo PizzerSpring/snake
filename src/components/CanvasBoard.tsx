@@ -14,6 +14,7 @@ import {
     scoreUpdates, stopGame
 } from "../store/actions";
 import Instructions from "./Instructions";
+import styles from './CanvasBoard.module.css';
 
 export interface ICanvasBoard {
     height: number;
@@ -150,14 +151,14 @@ const CanvasBoard = ({height, width}: ICanvasBoard) => {
     }, [disallowedDirection, handleKeyEvents]);
 
     return (
-        <>
-            <canvas style={{border: '3px solid black'}}
+        <div className={styles.container}>
+            <canvas className={styles.board}
                     ref={canvasRef}
                     height={height}
                     width={width}
             />
             <Instructions resetBoard={resetBoard}/>
-        </>
+        </div>
     );
 };
 

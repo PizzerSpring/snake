@@ -15,16 +15,16 @@ const Instructions = ({ resetBoard }: IInstructionProps) => (
         <div>
             <div>
         <span>
-          <b>w</b> Move Up
+          <b> w </b>- Move Up
         </span>
                 <span>
-          <b>a</b> Move Left
+          <b> a </b>- Move Left
         </span>
                 <span>
-          <b>s</b> Move Down
+          <b> s </b>- Move Down
         </span>
                 <span>
-          <b>d</b> Move Right
+          <b> d</b> - Move Right
         </span>
             </div>
             <div>

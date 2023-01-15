@@ -6,7 +6,7 @@ const ScoreCard = () => {
     const score = useSelector((state: IGlobalState) => state.score);
     return (
         <div>
-            <h1>Current score: {score}</h1>
+            <h2>Current score: {score}</h2>
         </div>
     );
 };

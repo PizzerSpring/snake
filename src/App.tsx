@@ -9,9 +9,11 @@ import ScoreCard from "./components/ScoreCard";
 function App() {
     return (
         <Provider store={store}>
+            <div className='App'>
                 <h2>SNAKE GAME</h2>
                 <ScoreCard/>
-                <CanvasBoard height={600} width={1000}/>
+                <CanvasBoard height={400} width={800}/>
+            </div>
         </Provider>
     );
 }
