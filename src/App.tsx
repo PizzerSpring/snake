@@ -4,11 +4,13 @@ import './App.css';
 import {Provider} from "react-redux";
 import store from "./store";
 import CanvasBoard from "./components/CanvasBoard";
+import ScoreCard from "./components/ScoreCard";
 
 function App() {
     return (
         <Provider store={store}>
                 <h2>SNAKE GAME</h2>
+                <ScoreCard/>
                 <CanvasBoard height={600} width={1000}/>
         </Provider>
     );
