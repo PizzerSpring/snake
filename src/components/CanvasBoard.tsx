@@ -13,12 +13,14 @@ import {
     resetGame,
     scoreUpdates, stopGame
 } from "../store/actions";
+import Instructions from "./Instructions";
 
 export interface ICanvasBoard {
     height: number;
     width: number;
 }
-const CanvasBoard = ({ height, width }: ICanvasBoard) => {
+
+const CanvasBoard = ({height, width}: ICanvasBoard) => {
     const dispatch = useDispatch();
     const snake1 = useSelector((state: IGlobalState) => state.snake);
     const disallowedDirection = useSelector(
@@ -148,11 +150,14 @@ const CanvasBoard = ({ height, width }: ICanvasBoard) => {
     }, [disallowedDirection, handleKeyEvents]);
 
     return (
-        <canvas style={{border: '3px solid black'}}
-                ref={canvasRef}
-                height={height}
-                width={width}
-        />
+        <>
+            <canvas style={{border: '3px solid black'}}
+                    ref={canvasRef}
+                    height={height}
+                    width={width}
+            />
+            <Instructions resetBoard={resetBoard}/>
+        </>
     );
 };
 
